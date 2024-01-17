@@ -8,6 +8,10 @@ class CitiesCountryTest(unittest.TestCase):
         data = get_formatted_data('ukraine', 'lviv')
         self.assertEqual(data, 'Ukraine, Lviv')
 
+    def test_formatted_data_different_letters(self):
+        data = get_formatted_data('uKraInE', 'lViv')
+        self.assertEqual(data, 'Ukraine, Lviv')
+
 
 if __name__ == '__main__':
     unittest.main()
